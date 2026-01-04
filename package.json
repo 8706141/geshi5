@@ -1,43 +1,42 @@
 {
-  "name": "format-converter",
-  "productName": "一键格式转换",
-  "description": "My Electron application description",
-  "keywords": [],
-  "main": "./main.js",
-  "version": "1.0.0",
-  "author": "rucy",
-  "scripts": {
-    "start": "electron .",
-    "build": "electron-builder"
-  },
-  "build": {
-    "appId": "com.example.formatconverter",
+    "name": "format-converter",
     "productName": "一键格式转换",
-    "publish": "never",
-    "directories": {
-      "output": "release"
+    "description": "My Electron application description",
+    "keywords": [],
+    "main": "./main.js",
+    "version": "1.0.1",
+    "author": "rucy",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder --publish never"
     },
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64"
-          ]
+    "build": {
+        "appId": "com.example.formatconverter",
+        "productName": "一键格式转换",
+        "directories": {
+            "output": "release"
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        },
+        "nsis": {
+            "oneClick": true,
+            "deleteAppDataOnUninstall": false,
+            "runAfterFinish": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true
         }
-      ]
     },
-    "nsis": {
-      "oneClick": true,
-      "deleteAppDataOnUninstall": false,
-      "runAfterFinish": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
+    "dependencies": {},
+    "devDependencies": {
+        "electron": "39.0.0",
+        "electron-builder": "^25.0.0"
     }
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "electron": "39.0.0",
-    "electron-builder": "^25.0.0"
-  }
 }
