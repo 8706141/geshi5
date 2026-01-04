@@ -4,7 +4,7 @@
     "description": "My Electron application description",
     "keywords": [],
     "main": "./main.js",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "rucy",
     "scripts": {
         "start": "electron .",
@@ -19,19 +19,15 @@
         "win": {
             "target": [
                 {
-                    "target": "nsis",
+                    "target": "portable",
                     "arch": [
                         "x64"
                     ]
                 }
             ]
         },
-        "nsis": {
-            "oneClick": true,
-            "deleteAppDataOnUninstall": false,
-            "runAfterFinish": true,
-            "createDesktopShortcut": true,
-            "createStartMenuShortcut": true
+        "portable": {
+            "artifactName": "${productName}_Portable_${version}.${ext}"
         }
     },
     "dependencies": {},
